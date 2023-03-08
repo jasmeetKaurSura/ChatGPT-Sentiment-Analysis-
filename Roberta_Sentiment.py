@@ -33,22 +33,7 @@ def Roberta(df):
     
     df=pd.concat([df.reset_index(drop=True),Scores_df],axis=1)
     
-    R_Sentiment =[]
-    for i in range(0,len(df), 1):
-        print(i)
-        if df['max'][i] == df['R_neg'][i]:
-            R_Sentiment.append('Negative')
-        if df['max'][i]== df['R_pos'][i]:
-            R_Sentiment.append('Positive')
-        else:
-            R_Sentiment.append('Neutral')
-    
-    sentiment_df= pd.DataFrame(R_Sentiment , columns= ["R_sentiment"])
-   
-    df=pd.concat([df.reset_index(drop=True),sentiment_df],axis=1)
-    
-
-    
+ 
     
     return(df)
   
